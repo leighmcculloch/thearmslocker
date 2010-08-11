@@ -1,7 +1,7 @@
 <?php
 
 /* includes */
-require_once('incs.php');
+require_once('incs/incs.php');
 
 /* find page */
 if(isset($_GET[GET_PAGE])) {
