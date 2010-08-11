@@ -1,7 +1,5 @@
 <?php
 
-define('GET_PAGE', 'page');
-
 /* valid pages */
 $PAGE_LIST=array(
 	'access_resources',
