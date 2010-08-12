@@ -1,13 +1,13 @@
 <?php
 
-define('DIR_INCS', 'incs');
-define('DIR_PAGES', 'pages');
-define('DIR_TEMPLATES', 'templates');
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 
-/* includes */
-require_once(DIR_INCS.'/incs.php');
+// includes
+require_once('config.php');
+require_once('incs/incs.php');
 
-/* find page */
+// find page
 if(isset($_GET[GET_PAGE])) {
 	$PAGE_NAME=$_GET[GET_PAGE];
 	if(!in_array($PAGE_NAME, $PAGE_LIST)) {
@@ -15,13 +15,13 @@ if(isset($_GET[GET_PAGE])) {
 	}
 }
 
-/* generate the page */
+// generate the page
 ob_start();
-include(DIR_PAGES.'/'.$PAGE_NAME.'.php');
+include('pages/'.$PAGE_NAME.'.php');
 $TEMPLATE_FIELD_BODY = ob_get_contents();
 ob_end_clean();
 
-/* display the page with the template */
-include(DIR_TEMPLATES.'/default/page.php');
+// display the page with the template
+include('templates/'.TEMPLATE.'/page.php');
 
 ?>
