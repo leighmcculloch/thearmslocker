@@ -1,5 +1,5 @@
 <?php
 
-define('LICENSE', 'License: Public Domain');
+define('LICENSE', 'MIT License');
 
 ?>

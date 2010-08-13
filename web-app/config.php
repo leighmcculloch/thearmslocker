@@ -1,6 +1,6 @@
 <?php
 
-define('DATABASE', '../web-db/default.sdb');
+define('DATABASE', 'sqlite:../web-db/default.sdb');
 define('TEMPLATE', 'default');
 
 ?>

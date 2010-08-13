@@ -2,6 +2,7 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', true);
+set_include_path('./');
 
 // includes
 require_once('config.php');

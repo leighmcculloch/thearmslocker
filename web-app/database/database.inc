@@ -9,7 +9,7 @@ class database
 	{
 		if(self::$databasePDO==null)
 		{
-			self::$databasePDO=new PDO('sqlite:'.DATABASE);
+			self::$databasePDO=new PDO(DATABASE);
 		}
 		self::$databaseRefCount++;
 	}
