@@ -15,4 +15,3 @@ class table_Resource extends table
 }
 
 ?>
-

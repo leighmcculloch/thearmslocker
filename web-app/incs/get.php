@@ -3,4 +3,3 @@
 define('GET_PAGE', 'page');
 
 ?>
-
