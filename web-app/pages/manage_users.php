@@ -25,6 +25,6 @@ $table->saveRow($user);
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('.edit').editable('database/save.php?page=manage_users');
+		$('.edit').editable('save.php?page=manage_users');
 	});
 </script>
