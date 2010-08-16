@@ -1,30 +1,34 @@
 <?php
 
 $table=new table_Users;
-$users=$table->getRows();
-/*
-foreach($users as $user)
-{
-	echo 'User ID: '.$user->id;
-	echo '<br/>';
-	echo 'Name: '.$user->name;
-	$user->name='Leigh McCullwoch';
-	$table->saveRow($user);
-}
+$users=$table->getRecords();
 
-$user=new table_Users_Record;
-$user->name='Donna McCulloch';
-$table->saveRow($user);
-*/
 ?>
 
 <script type="text/javascript" src="external/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="external/jquery.jeditable.mini.js"></script>
 
-<div class="edit" id="div_1">Dolor</div>
+<table>
+	<tr>
+		<td>User ID</td>
+		<td>Name</td>
+	</tr>
+	<?php foreach($users as $user) : ?>
+	<tr>
+		<td><?=$user->id?></td>
+		<td class="edit_text" id="[u]user[<?=$user->id?>].name"><?=$user->name?></td>
+		<td><a href="save.php?id=[d]user[<?=$user->id?>]">X</a></td>
+	</tr>
+	<?php endforeach; ?>
+	<tr>
+		<td><a href="save.php?id=[a]user[]">Create New User</a></td>
+	</tr>
+</table>
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('.edit').editable('save.php?page=manage_users');
+		$('.edit_text').editable('save.php', {
+			style: 'display: inline'
+		});
 	});
 </script>

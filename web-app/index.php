@@ -5,7 +5,6 @@ ini_set('display_errors', true);
 set_include_path('./');
 
 // includes
-require_once('config.php');
 require_once('incs/incs.php');
 
 // find page

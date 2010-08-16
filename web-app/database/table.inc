@@ -24,7 +24,7 @@ class table
 		return get_object_vars($table_record);
 	}
 	
-	public function getRowsWhere($where)
+	public function getRecordsWhere($where)
 	{
 		$sql = 'SELECT * FROM '.$this->getName();
 		if($where!==null)
@@ -36,19 +36,19 @@ class table
     	return $rows;
 	}
 	
-	public function getRows()
+	public function getRecords()
 	{
-    	return $this->getRowsWhere(null);
+    	return $this->getRecordsWhere(null);
 	}
 	
-	public function getRow($id)
+	public function getRecord($id)
 	{
 		if($id==null)
 		{
 			return null;
 		}
 		
-    	$rows = $this->getRowsWhere('id='.$id);
+    	$rows = $this->getRecordsWhere('id='.$id);
     	if(count($rows)==0)
     	{
     		return null;
@@ -56,19 +56,35 @@ class table
     	return $rows[0];
 	}
 	
-	public function saveRow($table_record)
+	public function saveRecord($table_record)
 	{
-		if($this->getRow($table_record->id)===null)
+		if($this->getRecord($table_record->id)===null)
 		{
-			$this->insertRow($table_record);
+			$this->insertRecord($table_record);
 		}
 		else
 		{
-			$this->updateRow($table_record);
+			$this->updateRecord($table_record);
 		}
 	}
 	
-	public function updateRow($table_record)
+	public function deleteRecord($table_record)
+	{
+		$this->deleteRecordID($table_record->id);
+	}
+	
+	public function deleteRecordID($table_record_id)
+	{
+		$columns = $this->getColumns($table_record);
+		
+		$sql = 'DELETE FROM '.$this->getName()
+		      .' WHERE id=:id';
+		
+		$statement = database::databasePDO()->prepare($sql);
+		$statement->execute($columns);
+	}
+	
+	public function updateRecord($table_record)
 	{
 		$columns = $this->getColumns($table_record);
 		
@@ -79,13 +95,13 @@ class table
 			$sql .= ' '.$name.'=:'.$name.',';
 		}
 		$sql  = rtrim($sql, ',');
-		$sql .= ' WHERE id='.$table_record->id;
+		$sql .= ' WHERE id=:id';
 		
 		$statement = database::databasePDO()->prepare($sql);
 		$statement->execute($columns);
 	}
 	
-	public function insertRow($table_record)
+	public function insertRecord($table_record)
 	{
 		$columns = $this->getColumns($table_record);
 		$columns_binded = array();
