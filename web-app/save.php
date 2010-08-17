@@ -1,25 +1,47 @@
 <?php
 
-error_reporting(E_ALL);
+error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors', true);
 
 include('incs/incs.php');
 
-$input_name=$_REQUEST['id'];
-$input_value=$_REQUEST['value'];
+$filters_post = array(
+	"id"=>FILTER_SANITIZE_STRING,
+	"value"=>FILTER_SANITIZE_STRING,
+	"redirect"=>FILTER_SANITIZE_STRING
+);
 
-preg_match('/\[(?P<action>[adu]?)\](?P<context>[a-z]+)\[(?P<id>[0-9]*)\]\.(?P<variable>[a-z]+)/', $input_name, $input_data);
-$input_context=$input_data['context'];
-$input_action=$input_data['action'];
-$input_id=$input_data['id'];
-$input_variable=$input_data['variable'];
+$input_post=filter_var_array($_REQUEST, $filters_post);
+$input_name=$input_post['id'];
+$input_value=$input_post['value'];
+$input_redirect=$input_post['redirect'];
+
+preg_match('/^'
+		  .'(?P<action>create|update|delete)'
+		  .'\('
+		     .'(?P<context>[a-z]+)'
+		     .'(\[)?(?P<id>[0-9]*)(\])?'
+		     .'(\.)?'
+		     .'(?P<variable>[a-z]*)'
+		  .'\)'
+		  .'$/', $input_name, $input_data);
+$input_action=filter_var($input_data['action'], FILTER_SANITIZE_STRING);
+$input_context=filter_var($input_data['context'], FILTER_SANITIZE_STRING);
+$input_id=filter_var($input_data['id'], FILTER_VALIDATE_INT);
+$input_variable=filter_var($input_data['variable'], FILTER_SANITIZE_STRING);
 
 if($input_context=='user')
 {
 	switch($input_action)
 	{
-	case 'a':
-	case 'u':
+	case 'create':
+		$table=new table_Users;
+		$user=new table_Users_Record;
+		$user->name="Enter Name";
+		$table->saveRecord($user);
+		redirect_to($input_redirect);
+		break;
+	case 'update':
 		$table=new table_Users;
 		$user=new table_Users_Record;
 		$user->id=$input_id;
@@ -27,11 +49,17 @@ if($input_context=='user')
 		$table->saveRecord($user);
 		echo $input_value;
 		break;
-	case 'd':
+	case 'delete':
 		$table=new table_Users;
-		$table->deleteRecordID($user);
+		$table->deleteRecordID($input_id);
+		redirect_to($input_redirect);
 		break;
 	}
+}
+
+function redirect_to($url)
+{
+	header('Location: '.$url);
 }
 
 ?>
