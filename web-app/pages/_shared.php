@@ -1,7 +1,8 @@
-<?php echo $TEMPLATE_FIELD_PAGE; ?>
-
 <script type="text/javascript" src="external/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="external/jquery.jeditable.mini.js"></script>
+
+<?php echo $TEMPLATE_FIELD_PAGE; ?>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.edit_text').editable('save.php', {
