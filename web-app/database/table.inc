@@ -90,6 +90,11 @@ class table
 		$sql .= ' SET';
 		foreach($columns as $name=>$value)
 		{
+			if($value===null)
+			{
+				unset($columns[$name]);
+				continue;
+			}
 			$sql .= ' '.$name.'=:'.$name.',';
 		}
 		$sql  = rtrim($sql, ',');
