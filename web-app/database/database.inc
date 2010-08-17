@@ -10,6 +10,7 @@ class database
 		if(self::$databasePDO==null)
 		{
 			self::$databasePDO=new PDO(DATABASE);
+			self::$databasePDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		self::$databaseRefCount++;
 	}
