@@ -75,13 +75,11 @@ class table
 	
 	public function deleteRecordID($table_record_id)
 	{
-		$columns = $this->getColumns($table_record);
-		
 		$sql = 'DELETE FROM '.$this->getName()
 		      .' WHERE id=:id';
-		
 		$statement = database::databasePDO()->prepare($sql);
-		$statement->execute($columns);
+		$statement->bindParam(':id', $table_record_id, PDO::PARAM_INT);
+		$statement->execute();
 	}
 	
 	public function updateRecord($table_record)
