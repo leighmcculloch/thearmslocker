@@ -13,7 +13,8 @@ case 'update':
 	$table=new table_ResourceType;
 	$type=new table_ResourceType_Record;
 	$type->id=$input_id;
-	$type->name=$input_value;
+	if($input_variable=='name')
+		$type->name=$input_value;
 	$table->saveRecord($type);
 	echo $input_value;
 	break;
