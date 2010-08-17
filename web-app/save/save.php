@@ -19,7 +19,7 @@ $input_redirect=$input_post['redirect'];
 preg_match('/^'
 		  .'(?P<action>create|update|delete)'
 		  .'\('
-		     .'(?P<context>[a-z]+)'
+		     .'(?P<context>[a-z_]+)'
 		     .'(\[)?(?P<id>[0-9]*)(\])?'
 		     .'(\.)?'
 		     .'(?P<variable>[a-z]*)'
@@ -34,9 +34,9 @@ if($input_context=='user')
 {
 	include('save_user.php');
 }
-else if($input_context=='resourcetype')
+else if($input_context=='resource_type')
 {
-	include('save_resourcetype.php');
+	include('save_resource_type.php');
 }
 
 function redirect_to($url)
