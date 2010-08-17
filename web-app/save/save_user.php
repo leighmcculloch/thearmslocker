@@ -13,7 +13,8 @@
 		$table=new table_Users;
 		$user=new table_Users_Record;
 		$user->id=$input_id;
-		$user->name=$input_value;
+		if($input_variable=='name')
+			$user->name=$input_value;
 		$table->saveRecord($user);
 		echo $input_value;
 		break;
