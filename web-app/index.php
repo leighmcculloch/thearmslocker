@@ -17,9 +17,13 @@ if(isset($_GET[GET_PAGE])) {
 
 // generate the page
 ob_start();
-include('pages/_header.php');
 include('pages/'.$PAGE_NAME.'.php');
-include('pages/_footer.php');
+$TEMPLATE_FIELD_PAGE = ob_get_contents();
+ob_end_clean();
+
+// generate the shared page that wraps the page
+ob_start();
+include('pages/_shared.php');
 $TEMPLATE_FIELD_BODY = ob_get_contents();
 ob_end_clean();
 
