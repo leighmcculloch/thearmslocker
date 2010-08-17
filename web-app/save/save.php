@@ -42,6 +42,10 @@ else if($input_context=='resource_range')
 {
 	include('save_resource_range.php');
 }
+else if($input_context=='resource')
+{
+	include('save_resource.php');
+}
 
 function redirect_to($url)
 {
