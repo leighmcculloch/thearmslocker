@@ -34,6 +34,10 @@ if($input_context=='user')
 {
 	include('save_user.php');
 }
+else if($input_context=='resourcetype')
+{
+	include('save_resourcetype.php');
+}
 
 function redirect_to($url)
 {
