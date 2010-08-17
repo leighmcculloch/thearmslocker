@@ -22,7 +22,7 @@ preg_match('/^'
 		     .'(?P<context>[a-z_]+)'
 		     .'(\[)?(?P<id>[0-9]*)(\])?'
 		     .'(\.)?'
-		     .'(?P<variable>[a-z]*)'
+		     .'(?P<variable>[a-z_]*)'
 		  .'\)'
 		  .'$/', $input_name, $input_data);
 $input_action=filter_var($input_data['action'], FILTER_SANITIZE_STRING);
