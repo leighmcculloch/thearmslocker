@@ -36,6 +36,16 @@ class table
     	return $rows;
 	}
 	
+	public function getRecordsWherePair($column, $value)
+	{
+		$sql = 'SELECT * FROM '.$this->getName().' WHERE '.$column.'=:'.$column;
+		$statement = database::databasePDO()->prepare($sql);
+		$statement->bindParam(':id', $table_record_id, PDO::PARAM_INT);
+		$statement->execute(array($column=>$value));
+    	$rows = $statement->fetchALL(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $this->getName().'_Record');
+    	return $rows;
+	}
+	
 	public function getRecords()
 	{
     	return $this->getRecordsWhere(null);
