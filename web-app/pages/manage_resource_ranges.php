@@ -7,7 +7,7 @@ $ranges=$table->getRecords();
 
 <table>
 	<tr>
-		<th>Resource Range ID</th>
+		<th>Range ID</th>
 		<th>Resource Type ID</th>
 		<th colspan="2">Resource Range</th>
 	</tr>
