@@ -12,6 +12,10 @@ class table_Resource_Record
 
 class table_Resource extends table
 {
+	public function getRecordsWithRange($range_id)
+	{
+		return $this->getRecordsWherePair('range_id', $range_id);
+	}
 }
 
 ?>

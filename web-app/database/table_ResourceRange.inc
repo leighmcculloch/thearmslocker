@@ -11,6 +11,10 @@ class table_ResourceRange_Record
 
 class table_ResourceRange extends table
 {
+	public function getRecordsWithType($type_id)
+	{
+		return $this->getRecordsWherePair('type_id', $type_id);
+	}
 }
 
 ?>
