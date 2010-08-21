@@ -1,27 +1,34 @@
+<div class="options"><a class="expandall">Expand All</a> | <a class="collapseall">Collapse All</a></div>
 <?php 
 $table=new table_ResourceType;
 $types=$table->getRecords();
 foreach($types as $type) : ?>
-<h1><?php echo $type->name; ?></h1>
-<div>
+<h1 id="type_<?php echo $type->id; ?>" class="section"><?php echo $type->name; ?></h1>
+<div id="block_type_<?php echo $type->id; ?>" class="block">
 
 	<?php 
 	$table=new table_ResourceRange;
 	$ranges=$table->getRecordsWithType($type->id);
 	foreach($ranges as $range) : ?>
-	<h2><?php echo $range->name; ?></h2>
-	<div>
+	<h2 id="range_<?php echo $range->id; ?>" class="section"><?php echo $range->name; ?></h2>
+	<div id="block_range_<?php echo $range->id; ?>" class="block">
 	
+		<?php 
+		$table=new table_Resource;
+		$resources=$table->getRecordsWithRange($range->id);
+		if(count($resources)==0)
+		{
+			echo '<table><tr><td>No Resources in this Range/Type</td></tr></table>';
+		}
+		else
+		{?>
 		<table>
 			<tr>
 				<th>Resource ID</th>
 				<th>Resource</th>
-				<th colspan="2">Assigned to</th>
+				<th>Assigned to</th>
 			</tr>
-		<?php 
-		$table=new table_Resource;
-		$resources=$table->getRecordsWithRange($range->id);
-		foreach($resources as $resource) : 
+		<?php foreach($resources as $resource) : 
 			$username='';
 			if($resource->user_id!==null)
 			{
@@ -35,7 +42,8 @@ foreach($types as $type) : ?>
 				<td class="edit_text" id="update(resource[<?php echo $resource->id; ?>].name)"><?php echo $resource->name; ?></td>
 				<td class="edit_user" id="update(resource[<?php echo $resource->id; ?>].user_id)"><?php echo $username; ?></td>
 			</tr>
-		<?php endforeach; ?>
+		<?php endforeach;
+		} ?>
 		</table>
 		
 	</div>
@@ -43,3 +51,20 @@ foreach($types as $type) : ?>
 	
 </div>
 <?php endforeach; ?>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.section').click(function(){
+			$('#block_'+$(this).attr('id')).slideToggle();
+		});
+		$('.section,.expandall,.collapseall').hover(function() {
+			$(this).css('cursor','pointer');
+		});
+		$('.expandall').click(function(){
+			$('.block').slideDown();
+		});
+		$('.collapseall').click(function(){
+			$('.block').slideUp();
+		});
+	});
+</script>
