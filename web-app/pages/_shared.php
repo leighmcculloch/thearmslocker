@@ -22,7 +22,10 @@ foreach($ranges as $range)
 {	
 	$table=new table_ResourceType;
 	$type=$table->getRecord($range->type_id);
-	$ranges_select[$range->id]=$type->name.': '.$range->name;
+	if($type!==null)
+	{
+		$ranges_select[$range->id]=$type->name.': '.$range->name;
+	}
 }
 asort($ranges_select);
 	
