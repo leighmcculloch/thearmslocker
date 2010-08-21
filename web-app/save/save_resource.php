@@ -17,6 +17,8 @@ case 'update':
 		$resource->name=$input_value;
 	if($input_variable=='range_id')
 		$resource->range_id=$input_value;
+	if($input_variable=='user_id')
+		$resource->user_id=$input_value;
 	$table->saveRecord($resource);
 	
 	if($input_variable=='name')
@@ -31,6 +33,13 @@ case 'update':
 		$table=new table_ResourceType;
 		$type=$table->getRecord($range->type_id);
 		echo $type->name.': '.$range->name;
+	}
+	
+	if($input_variable=='user_id')
+	{
+		$table=new table_Users;
+		$user=$table->getRecord($input_value);
+		echo $user->name;
 	}
 	break;
 case 'delete':
