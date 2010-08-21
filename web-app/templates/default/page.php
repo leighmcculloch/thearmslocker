@@ -1,10 +1,165 @@
 <HTML>
 <HEAD>
 <TITLE>the arms locker - Limited Resource Management</TITLE>
+<style>
+body {
+	background-color:#fff;
+}
+
+body, th, td {
+	font-family:Helvetica, Geneva, Arial, sans-serif;
+	font-size:13px;
+}
+
+a {
+	color:#f00;
+}
+
+a:hover {
+	color:#f00;
+	text-decoration:underline;
+}
+
+h1 {
+	font-size:16px;
+	font-weight:bold;
+	margin:0;
+	padding-top:10px;
+}
+
+h2 {
+	font-size:15px;
+	font-weight:bold;
+	margin:0 0 0 20px;
+	background-color:#A5C1E5;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	width:150px;
+	text-align:center;
+}
+
+.header, .footer {
+	border-radius:15px;
+	background-color:#5F90D0;
+	padding:10px;
+	color:#fff;
+	-webkit-box-shadow: 2px 2px 2px #888;
+}
+
+.header .credentials {
+	float:right;
+}
+
+.header .title {
+	font-weight:bold;
+	font-size:14px;
+}
+
+.footer {
+	font-size:11px;
+	text-align:center;
+}
+
+.footer a {
+	color:#fff;
+}
+
+.footer a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+
+.body {
+	/*border-radius:15px;
+	background-color:#F0F2F5;*/
+	padding:10px;
+}
+
+table {
+	border-radius:15px;
+	width:100%;
+	margin:0;
+	padding:0;
+	background-color:#F0F2F5;
+}
+
+th, td {
+	margin:0;
+	padding:3px 6px;
+}
+
+th {
+	text-align:left;
+	background-color:#A5C1E5;
+}
+
+th:first-child {
+	border-top-left-radius:15px;
+}
+
+th:last-child {
+	border-top-right-radius:15px;
+}
+
+tr {
+	width:10px;
+	border-bottom:#CCC;
+}
+
+.create {
+	text-align:right;
+}
+
+.options {
+	float:right;
+	color:#000;
+	font-size:10px;
+}
+
+.section {
+	margin-top:5px;
+}
+
+.block {
+}
+
+</style>
 </HEAD>
 <BODY>
 
-<?=$TEMPLATE_FIELD_BODY?>
+<div class="header">
+	<div class="credentials"><?php echo $_SERVER['REMOTE_ADDR']; ?></div>
+	<div class="title">The Arms Locker: Limited Resource Management</div>
+</div>
+
+<div class="body">
+	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
+	<?=$TEMPLATE_FIELD_BODY?>
+</div>
+
+<div class="footer">
+	<?php
+	$page_menu_list='';
+	foreach($PAGE_LIST as $page_name)
+	{
+		$page_menu_list .= '<a href="?page='.$page_name.'">'.ucwords(str_replace('_', ' ', $page_name)).'</a> | ';
+	}
+	$page_menu_list = rtrim($page_menu_list, '| ');
+	echo $page_menu_list;
+	?>
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.create').html('[ + '+$('.create').html()+' ]');
+		$('.delete').html('[ X ]');
+		
+		$('th:first-child').attr('width', 100);
+		$('th:first-child+th').attr('width', 200);
+		$('.delete').attr('width', 60);
+	});
+</script>
 
 </BODY>
 </HTML>
