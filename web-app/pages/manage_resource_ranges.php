@@ -1,10 +1,5 @@
 <?php
 
-$table=new table_ResourceType;
-$types=$table->getRecords();
-$types_select=array();
-foreach($types as $type)
-	$types_select[$type->id]=$type->name;
 $table=new table_ResourceRange;
 $ranges=$table->getRecords();
 
@@ -34,14 +29,3 @@ $ranges=$table->getRecords();
 		<td colspan="4" class="create" id="create(resource_range)">Create New Resource Range</td>
 	</tr>
 </table>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.edit_resource_type').editable('save.php', { 
-			data   : '<?php echo json_encode($types_select); ?>',
-			type   : 'select',
-			submit : 'OK',
-			style  : 'display: inline'
-		});
-	});
-</script>

@@ -1,14 +1,3 @@
-<?php
-
-$table=new table_Users;
-$users=$table->getRecords();
-$users_select=array();
-foreach($users as $user)
-	$users_select[$user->id]=$user->name;
-
-?>
-
-
 <?php 
 $table=new table_ResourceType;
 $types=$table->getRecords();
@@ -54,15 +43,3 @@ foreach($types as $type) : ?>
 	
 </div>
 <?php endforeach; ?>
-
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.edit_user').editable('save.php', { 
-			data   : '<?php echo json_encode($users_select); ?>',
-			type   : 'select',
-			submit : 'OK',
-			style  : 'display: inline'
-		});
-	});
-</script>
