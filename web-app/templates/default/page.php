@@ -12,11 +12,12 @@ body, th, td {
 }
 
 a {
-	color:#f00;
+	font-weight:bold;
+	color:#5F90D0;
+	text-decoration:none;
 }
 
 a:hover {
-	color:#f00;
 	text-decoration:underline;
 }
 
@@ -24,14 +25,14 @@ h1 {
 	font-size:16px;
 	font-weight:bold;
 	margin:0;
-	padding-top:10px;
+	padding:0 0 5px 10px;
 }
 
 h2 {
 	font-size:15px;
 	font-weight:bold;
 	margin:0 0 0 20px;
-	background-color:#A5C1E5;
+	background-color:#F0F2F5;
 	border-top-left-radius:15px;
 	border-top-right-radius:15px;
 	width:150px;
@@ -43,7 +44,7 @@ h2 {
 	background-color:#5F90D0;
 	padding:10px;
 	color:#fff;
-	-webkit-box-shadow: 2px 2px 2px #888;
+	-webkit-box-shadow: 1px 1px 2px #F0F2F5;
 }
 
 .header .credentials {
@@ -72,7 +73,7 @@ h2 {
 .body {
 	/*border-radius:15px;
 	background-color:#F0F2F5;*/
-	padding:10px;
+	padding:10px 0;
 }
 
 table {
@@ -90,7 +91,7 @@ th, td {
 
 th {
 	text-align:left;
-	background-color:#A5C1E5;
+	background-color:#F0F2F5;
 }
 
 th:first-child {
@@ -111,13 +112,24 @@ tr {
 }
 
 .options {
-	float:right;
+	text-align:center;
 	color:#000;
 	font-size:10px;
+	padding-top:10px;
+}
+
+.sectionblock {
+	padding:15px;
+	border-radius:15px;
+	background-color:#A5C1E5;
+	margin-top:10px;
 }
 
 .section {
-	margin-top:5px;
+}
+
+h2.section {
+	margin-top:10px;
 }
 
 .block {
@@ -133,7 +145,7 @@ tr {
 </div>
 
 <div class="body">
-	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
+	<h1><?php if($PAGE_NAME!='access_resources'){echo ucwords(str_replace('_', ' ', $PAGE_NAME));} ?></h1>
 	<?=$TEMPLATE_FIELD_BODY?>
 </div>
 
@@ -153,7 +165,9 @@ tr {
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.create').html('[ + '+$('.create').html()+' ]');
-		$('.delete').html('[ X ]');
+		$('.delete').html('[ x ]');
+		$('.delete,.create').attr('align', 'right');
+		$('.delete,.create').css('font-weight', 'bold');
 		
 		$('th:first-child').attr('width', 100);
 		$('th:first-child+th').attr('width', 200);

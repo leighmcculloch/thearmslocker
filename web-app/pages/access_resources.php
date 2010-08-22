@@ -1,8 +1,8 @@
-<div class="options"><a class="expandall">Expand All</a> | <a class="collapseall">Collapse All</a></div>
 <?php 
 $table=new table_ResourceType;
 $types=$table->getRecords();
 foreach($types as $type) : ?>
+<div class="sectionblock">
 <h1 id="type_<?php echo $type->id; ?>" class="section"><?php echo $type->name; ?></h1>
 <div id="block_type_<?php echo $type->id; ?>" class="block">
 
@@ -50,12 +50,16 @@ foreach($types as $type) : ?>
 	<?php endforeach; ?>
 	
 </div>
+</div>
 <?php endforeach; ?>
+
+<div class="options"><a class="expandall">Expand All</a> | <a class="collapseall">Collapse All</a></div>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.section').click(function(){
 			$('#block_'+$(this).attr('id')).slideToggle();
+			$('#block_'+$(this).attr('id')).css('border-radius', '15px');
 		});
 		$('.section,.expandall,.collapseall').hover(function() {
 			$(this).css('cursor','pointer');
