@@ -172,7 +172,7 @@ h2.section {
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.create').html('[ + '+$('.create').html()+' ]');
-		$('.delete').html('[ x ]');
+		$('.delete').html('[ x ]').css('color', '#f00');
 		$('.delete,.create').attr('align', 'right');
 		$('.delete,.create').css('font-weight', 'bold');
 		
