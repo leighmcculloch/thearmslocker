@@ -150,18 +150,16 @@ h2.section {
 </div>
 
 <div class="body">
-	<?php if($PAGE_NAME!='access_resources'){?>
 	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
-	<?php } ?>
 	<?=$TEMPLATE_FIELD_BODY?>
 </div>
 
 <div class="footer">
 	<?php
 	$page_menu_list='';
-	foreach($PAGE_LIST as $page_name)
+	foreach($PAGE_LIST as $page_file=>$page_name)
 	{
-		$page_menu_list .= '<a href="?page='.$page_name.'">'.ucwords(str_replace('_', ' ', $page_name)).'</a> | ';
+		$page_menu_list .= '<a href="?page='.$page_file.'">'.ucwords(str_replace('_', ' ', $page_name)).'</a> | ';
 	}
 	$page_menu_list = rtrim($page_menu_list, '| ');
 	echo $page_menu_list;

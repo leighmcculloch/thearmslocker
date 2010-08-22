@@ -2,14 +2,14 @@
 
 /* valid pages */
 $PAGE_LIST=array(
-	'access_resources',
-	'manage_resource_ranges',
-	'manage_resource_types',
-	'manage_resource',
-	'manage_users'
+	'access_resources'=>'Assign Resources',
+	'manage_resource_ranges'=>'Resource Subtypes',
+	'manage_resource_types'=>'Resource Types',
+	'manage_resource'=>'Resources',
+	'manage_users'=>'Users'
 );
 
-$PAGE_DEFAULT_NAME=$PAGE_LIST[0];
-$PAGE_NAME=$PAGE_DEFAULT_NAME;
+$PAGE_DEFAULT_FILE='access_resources';
+$PAGE_FILE=$PAGE_DEFAULT_FILE;
 
 ?>
