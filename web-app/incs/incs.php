@@ -4,8 +4,8 @@
 require_once('config.php');
 
 /* includes */
-require_once('define.php');
-require_once('get.php');
+require_once('incs/define.php');
+require_once('incs/get.php');
 require_once('pages/pages.php');
 
 /* database classes */
