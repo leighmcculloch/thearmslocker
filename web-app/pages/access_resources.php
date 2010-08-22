@@ -3,7 +3,7 @@ $table=new table_ResourceType;
 $types=$table->getRecords();
 foreach($types as $type) : ?>
 <div class="sectionblock">
-<h1 id="type_<?php echo $type->id; ?>" class="section"><?php echo $type->name; ?></h1>
+<h1 id="type_<?php echo $type->id; ?>" class="section" style="text-align:center;"><?php echo $type->name; ?></h1>
 <div id="block_type_<?php echo $type->id; ?>" class="block">
 
 	<?php 
