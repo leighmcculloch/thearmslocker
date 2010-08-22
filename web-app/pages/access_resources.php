@@ -39,7 +39,7 @@ foreach($types as $type) : ?>
 			} ?>
 			<tr>
 				<td><?php echo $resource->id; ?></td>
-				<td class="edit_text" id="update(resource[<?php echo $resource->id; ?>].name)"><?php echo $resource->name; ?></td>
+				<td><?php echo $resource->name; ?></td>
 				<td class="edit_user" id="update(resource[<?php echo $resource->id; ?>].user_id)"><?php echo $username; ?></td>
 			</tr>
 		<?php endforeach;
