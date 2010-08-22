@@ -6,7 +6,7 @@ require_once('config.php');
 /* includes */
 require_once('define.php');
 require_once('get.php');
-require_once('pages.php');
+require_once('pages/pages.php');
 
 /* database classes */
 require_once('database/database.inc');
