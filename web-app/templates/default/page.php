@@ -115,14 +115,17 @@ tr {
 	text-align:center;
 	color:#000;
 	font-size:10px;
-	padding-top:10px;
 }
 
 .sectionblock {
 	padding:15px;
 	border-radius:15px;
 	background-color:#A5C1E5;
-	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.blocktitle {
+	text-align:center;
 }
 
 .section {
@@ -145,7 +148,9 @@ h2.section {
 </div>
 
 <div class="body">
-	<h1><?php if($PAGE_NAME!='access_resources'){echo ucwords(str_replace('_', ' ', $PAGE_NAME));} ?></h1>
+	<?php if($PAGE_NAME!='access_resources'){?>
+	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
+	<?php } ?>
 	<?=$TEMPLATE_FIELD_BODY?>
 </div>
 
