@@ -44,7 +44,7 @@ h2 {
 	background-color:#5F90D0;
 	padding:10px;
 	color:#fff;
-	-webkit-box-shadow: 1px 1px 2px #F0F2F5;
+	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
 .header .credentials {
@@ -82,6 +82,7 @@ table {
 	margin:0;
 	padding:0;
 	background-color:#F0F2F5;
+	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
 th, td {
@@ -133,6 +134,7 @@ tr {
 
 h2.section {
 	margin-top:10px;
+	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
 .block {
