@@ -62,8 +62,11 @@ asort($ranges_select);
 		$('.delete,.create').click(function () { 
 			window.location = 'save.php?redirect=<?php echo $_SERVER['REQUEST_URI']; ?>&id='+$(this).attr('id');
 		});
-		$('.delete,.create,.edit_text,.edit_user,.edit_resource_type,.edit_resource_range').hover(function() {
+		$('.delete,.create,.update,.edit_text,.edit_user,.edit_resource_type,.edit_resource_range').hover(function() {
 			$(this).css('cursor','pointer');
+		});
+		$('.update').click(function () { 
+			window.location = 'save.php?redirect=<?php echo $_SERVER['REQUEST_URI']; ?>&id='+$(this).attr('id')+'&value='+$(this).attr('value');
 		});
 	});
 </script>
