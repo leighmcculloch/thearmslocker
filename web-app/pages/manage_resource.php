@@ -7,8 +7,8 @@ $resources=$table->getRecords();
 
 <table>
 	<tr>
-		<th>Resource ID</th>
-		<th>Resource Range ID</th>
+		<th>ID</th>
+		<th>Resource Type</th>
 		<th colspan="2">Resource</th>
 	</tr>
 	<?php foreach($resources as $resource) :

@@ -7,8 +7,8 @@ $users=$table->getRecords();
 
 <table>
 	<tr>
-		<th>User ID</th>
-		<th colspan="2">Name</th>
+		<th>ID</th>
+		<th colspan="2">User Name</th>
 	</tr>
 	<?php foreach($users as $user) : ?>
 	<tr>
