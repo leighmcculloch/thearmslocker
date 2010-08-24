@@ -151,7 +151,7 @@ h2.section {
 
 <div class="body">
 	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
-	<?=$TEMPLATE_FIELD_BODY?>
+	<?php echo $TEMPLATE_FIELD_BODY; ?>
 </div>
 
 <div class="footer">
