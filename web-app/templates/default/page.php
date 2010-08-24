@@ -180,6 +180,7 @@ h2.section {
 		$('th:first-child').attr('width', 100);
 		$('th:first-child+th').attr('width', 200);
 		$('.delete').attr('width', 60);
+		$('.options').html('&nbsp;');
 	});
 </script>
 
