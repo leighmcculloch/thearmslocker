@@ -140,6 +140,11 @@ h2.section {
 .block {
 }
 
+.copyright {
+	text-align:center;
+	margin-top:5px;
+}
+
 </style>
 </HEAD>
 <BODY>
