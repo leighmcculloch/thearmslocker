@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set('error_reporting', E_ALL);
+ini_set('error_reporting', E_ALL|E_STRICT);
 ini_set('display_errors', true);
 set_include_path('./');
 
