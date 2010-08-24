@@ -32,7 +32,8 @@ asort($ranges_select);
 ?>
 
 <script type="text/javascript" src="external/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="external/jquery.jeditable.mini.js"></script>
+<script type="text/javascript" src="external/jquery.jeditable.mini.js"></script>	
+<script type="text/javascript" src="external/jquery-ui-1.8.4.custom.min.js"></script>
 
 <?php echo $TEMPLATE_FIELD_PAGE; ?>
 

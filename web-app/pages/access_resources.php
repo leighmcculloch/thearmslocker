@@ -1,9 +1,16 @@
 <?php 
 $table=new table_ResourceType;
 $types=$table->getRecords();
-foreach($types as $type) : ?>
-<div class="sectionblock">
-<h1 id="type_<?php echo $type->id; ?>" class="section blocktitle"><?php echo $type->name; ?></h1>
+?>
+
+<div class="tabs">
+<ul>
+	<?php foreach($types as $type) : ?>
+	<li><a href="#block_type_<?php echo $type->id; ?>"><span><?php echo $type->name; ?></span></a></li>
+	<?php endforeach; ?>
+</ul>
+
+<?php foreach($types as $type) : ?>
 <div id="block_type_<?php echo $type->id; ?>" class="block">
 
 	<?php 
@@ -11,14 +18,14 @@ foreach($types as $type) : ?>
 	$ranges=$table->getRecordsWithType($type->id);
 	foreach($ranges as $range) : ?>
 	<h2 id="range_<?php echo $range->id; ?>" class="section"><?php echo $range->name; ?></h2>
-	<div id="block_range_<?php echo $range->id; ?>" class="block">
+	<div id="block_range_<?php echo $range->id; ?>" class="block2">
 	
 		<?php 
 		$table=new table_Resource;
 		$resources=$table->getRecordsWithRange($range->id);
 		if(count($resources)==0)
 		{
-			echo '<table><tr><td>No Resources in this Range/Type</td></tr></table>';
+			echo '<table><tr><th>'.$range->name.'</th></tr><tr><td>No Resources in this Range/Type</td></tr></table>';
 		}
 		else
 		{?>
@@ -42,14 +49,12 @@ foreach($types as $type) : ?>
 				<td><?php echo $resource->name; ?></td>
 				<td class="edit_user" id="update(resource[<?php echo $resource->id; ?>].user_id)"><?php echo $username; ?></td>
 			</tr>
-		<?php endforeach;
-		} ?>
+		<?php endforeach; ?>
 		</table>
+		<?php } ?>
 		
 	</div>
 	<?php endforeach; ?>
-	
-</div>
 </div>
 <?php endforeach; ?>
 
@@ -57,6 +62,7 @@ foreach($types as $type) : ?>
 
 <script type="text/javascript">
 	$(document).ready(function() {
+	    $('.tabs').tabs();
 		$('.section').click(function(){
 			$('#block_'+$(this).attr('id')).slideToggle();
 			$('#block_'+$(this).attr('id')).css('border-radius', '15px');

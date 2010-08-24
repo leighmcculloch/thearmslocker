@@ -1,6 +1,7 @@
 <HTML>
 <HEAD>
 <TITLE>the arms locker - Limited Resource Management</TITLE>
+<link type="text/css" href="templates/default/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
 <style>
 body {
 	background-color:#fff;
@@ -77,11 +78,11 @@ h2 {
 }
 
 table {
-	border-radius:15px;
 	width:100%;
 	margin:0;
 	padding:0;
 	background-color:#F0F2F5;
+	border-radius:15px;
 	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
@@ -118,13 +119,6 @@ tr {
 	font-size:10px;
 }
 
-.sectionblock {
-	padding:15px;
-	border-radius:15px;
-	background-color:#A5C1E5;
-	margin-bottom:10px;
-}
-
 .blocktitle {
 	text-align:center;
 }
@@ -137,13 +131,50 @@ h2.section {
 	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
-.block {
+.block2 {
+	border:0;
 }
 
 .copyright {
 	text-align:center;
 	margin-top:5px;
 }
+
+/*.ui-tabs .ui-tabs-nav li { width:50px; display:block; height:20px; }*/
+.ui-tabs { padding:0; border:0; }
+.ui-tabs .ui-tabs-nav { padding:0; margin-left:15px; }
+.ui-tabs .ui-tabs-nav li {
+	border:0;
+}
+.ui-tabs .ui-tabs-nav li a {
+	font-size:15px;
+	font-weight:bold;
+	background-color:#F0F2F5;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	width:200px;
+	text-align:center;
+	padding:2px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+	background-color:#A5C1E5;
+}
+.ui-tabs .ui-tabs-nav li a span {
+	font-size:15px;
+}
+.ui-tabs .ui-tabs-panel {
+	padding:15px;
+	border-radius:15px;
+	background-color:#A5C1E5;
+	margin-bottom:10px;
+}
+.ui-tabs .ui-tabs-selected {
+	background-color:#A5C1E5;
+}
+.ui-tabs .ui-state-active {
+	background-color:#A5C1E5;
+}
+
 
 </style>
 </HEAD>
