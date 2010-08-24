@@ -28,6 +28,8 @@ include('pages/_shared.php');
 $TEMPLATE_FIELD_BODY = ob_get_contents();
 ob_end_clean();
 
+$TEMPLATE_FIELD_COPYRIGHT = COPYRIGHT.', '.LICENSE.'<br/>Powered by '.ATTRIBUTE;
+
 // display the page with the template
 include('templates/'.TEMPLATE.'/page.php');
 

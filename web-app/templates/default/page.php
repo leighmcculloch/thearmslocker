@@ -166,6 +166,9 @@ h2.section {
 	?>
 </div>
 
+<div class="copyright">
+	<?php echo $TEMPLATE_FIELD_COPYRIGHT; ?>
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function() {
