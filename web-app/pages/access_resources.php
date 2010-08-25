@@ -29,12 +29,15 @@ $types=$table->getRecords();
 		}
 		else
 		{?>
-		<table>
+		<table class="tablesorter">
+			<thead>
 			<tr>
 				<th>Resource ID</th>
 				<th>Resource</th>
 				<th>Assigned to</th>
 			</tr>
+			</thead>
+			<tbody>
 		<?php foreach($resources as $resource) : 
 			$username='';
 			if($resource->user_id!==null)
@@ -50,6 +53,7 @@ $types=$table->getRecords();
 				<td class="edit_user" id="update(resource[<?php echo $resource->id; ?>].user_id)"><?php echo $username; ?></td>
 			</tr>
 		<?php endforeach; ?>
+			</tbody>
 		</table>
 		<?php } ?>
 		

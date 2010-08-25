@@ -2,6 +2,7 @@
 <HEAD>
 <TITLE>the arms locker - Limited Resource Management</TITLE>
 <link type="text/css" href="templates/default/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
+<link type="text/css" href="templates/default/blue/style.css" rel="stylesheet" />	
 <style>
 body {
 	background-color:#fff;
@@ -40,7 +41,7 @@ h2 {
 	text-align:center;
 }
 
-.header, .footer {
+.pageheader, .pagefooter {
 	border-radius:15px;
 	background-color:#5F90D0;
 	padding:10px;
@@ -48,30 +49,30 @@ h2 {
 	-webkit-box-shadow: 1px 1px 2px #000;/*#F0F2F5;*/
 }
 
-.header .credentials {
+.pageheader .credentials {
 	float:right;
 }
 
-.header .title {
+.pageheader .title {
 	font-weight:bold;
 	font-size:14px;
 }
 
-.footer {
+.pagefooter {
 	font-size:11px;
 	text-align:center;
 }
 
-.footer a {
+.pagefooter a {
 	color:#fff;
 }
 
-.footer a:hover {
+.pagefooter a:hover {
 	color:#fff;
 	text-decoration:underline;
 }
 
-.body {
+.pagebody {
 	/*border-radius:15px;
 	background-color:#F0F2F5;*/
 	padding:10px 0;
@@ -175,22 +176,21 @@ h2.section {
 	background-color:#A5C1E5;
 }
 
-
 </style>
 </HEAD>
 <BODY>
 
-<div class="header">
+<div class="pageheader">
 	<div class="credentials"><?php echo $_SERVER['REMOTE_ADDR']; ?></div>
 	<div class="title">The Arms Locker: Limited Resource Management</div>
 </div>
 
-<div class="body">
+<div class="pagebody">
 	<h1><?php echo ucwords(str_replace('_', ' ', $PAGE_NAME)); ?></h1>
 	<?php echo $TEMPLATE_FIELD_BODY; ?>
 </div>
 
-<div class="footer">
+<div class="pagefooter">
 	<?php
 	$page_menu_list='';
 	foreach($PAGE_LIST as $page_file=>$page_name)

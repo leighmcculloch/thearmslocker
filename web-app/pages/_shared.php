@@ -34,6 +34,7 @@ asort($ranges_select);
 <script type="text/javascript" src="external/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="external/jquery.jeditable.mini.js"></script>	
 <script type="text/javascript" src="external/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="external/jquery.tablesorter.min.js"></script>
 
 <?php echo $TEMPLATE_FIELD_PAGE; ?>
 
@@ -69,5 +70,6 @@ asort($ranges_select);
 		$('.update').click(function () { 
 			window.location = 'save.php?redirect=<?php echo $_SERVER['REQUEST_URI']; ?>&id='+$(this).attr('id')+'&value='+$(this).attr('value');
 		});
+        $('.tablesorter').tablesorter(); 
 	});
 </script>
