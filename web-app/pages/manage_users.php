@@ -5,11 +5,19 @@ $users=$table->getRecords();
 
 ?>
 
-<table>
+<table class="tablesorter">
+	<thead>
 	<tr>
 		<th>ID</th>
 		<th colspan="2">User Name</th>
 	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td colspan="3" class="create" id="create(user)">Create New User</td>
+	</tr>
+	</tfoot>
+	<tbody>
 	<?php foreach($users as $user) : ?>
 	<tr>
 		<td><?php echo $user->id; ?></td>
@@ -17,7 +25,5 @@ $users=$table->getRecords();
 		<td class="delete" id="delete(user[<?php echo $user->id; ?>])">X</td>
 	</tr>
 	<?php endforeach; ?>
-	<tr>
-		<td colspan="3" class="create" id="create(user)">Create New User</td>
-	</tr>
+	</tbody>
 </table>
