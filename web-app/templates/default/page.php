@@ -214,7 +214,7 @@ h2.section {
 		$('.delete,.create').attr('align', 'right');
 		$('.delete,.create').css('font-weight', 'bold');
 		
-		$('th:first-child').attr('width', 100);
+		$('th:first-child').attr('width', 40);
 		$('th:first-child+th').attr('width', 200);
 		$('.delete').attr('width', 60);
 		$('.options').html('&nbsp;');

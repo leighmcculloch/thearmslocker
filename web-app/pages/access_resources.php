@@ -32,7 +32,7 @@ $types=$table->getRecords();
 		<table class="tablesorter">
 			<thead>
 			<tr>
-				<th>Resource ID</th>
+				<th>ID</th>
 				<th>Resource</th>
 				<th>Assigned to</th>
 			</tr>
