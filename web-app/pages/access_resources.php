@@ -25,7 +25,7 @@ $types=$table->getRecords();
 		$resources=$table->getRecordsWithRange($range->id);
 		if(count($resources)==0)
 		{
-			echo '<table><tr><th>'.$range->name.'</th></tr><tr><td>No Resources in this Range/Type</td></tr></table>';
+			echo '<table><tr><td>No resources in this resource type.</td></tr></table>';
 		}
 		else
 		{?>
