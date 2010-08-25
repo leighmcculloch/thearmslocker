@@ -142,6 +142,7 @@ h2.section {
 }
 
 /*.ui-tabs .ui-tabs-nav li { width:50px; display:block; height:20px; }*/
+.ui-widget { font-family: inherit; }
 .ui-tabs { padding:0; border:0; }
 .ui-tabs .ui-tabs-nav { padding:0; margin-left:15px; }
 .ui-tabs .ui-tabs-nav li {
