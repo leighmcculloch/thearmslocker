@@ -5,12 +5,20 @@ $resources=$table->getRecords();
 
 ?>
 
-<table>
+<table class="tablesorter">
+	<thead>
 	<tr>
 		<th>ID</th>
 		<th>Resource Type</th>
 		<th colspan="2">Resource</th>
 	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td colspan="4" class="create" id="create(resource)">Create New Resource</td>
+	</tr>
+	</tfoot>
+	<tbody>
 	<?php foreach($resources as $resource) :
 		  $range_name='Not Set';
 		  $table=new table_ResourceRange;
@@ -29,7 +37,5 @@ $resources=$table->getRecords();
 		<td class="delete" id="delete(resource[<?php echo $resource->id; ?>])">X</td>
 	</tr>
 	<?php endforeach; ?>
-	<tr>
-		<td colspan="4" class="create" id="create(resource)">Create New Resource</td>
-	</tr>
+	</tbody>
 </table>
