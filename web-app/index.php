@@ -30,6 +30,7 @@ $TEMPLATE_FIELD_BODY = ob_get_contents();
 ob_end_clean();
 
 $TEMPLATE_FIELD_COPYRIGHT = COPYRIGHT.', '.LICENSE.'<br/>Powered by '.ATTRIBUTE;
+$TEMPLATE_FIELD_COPYRIGHT = '<br/>'.`git describe`;
 
 // display the page with the template
 include('templates/'.TEMPLATE.'/page.php');
