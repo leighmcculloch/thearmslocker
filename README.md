@@ -5,10 +5,7 @@ The Arms Locker attempts to solve a simple problem: "Who has what?". Whether you
 
 ## Install & Use
 
-Installing is simple. You just need the /web-app hosted in any webserver
-supporting PHP 5.2.1. If you wish to use SQlite you can use the provided
-database in /web-db/default.sdb. Otherwise the code is only limited by
-the databases supported by the PHP PDO implementation.
+Installing is simple. You just need the `/web-app` hosted in any webserver supporting PHP 5.2.1. If you wish to use SQlite you can use the provided database in /web-db/default.sdb. Otherwise the code is only limited by the databases supported by the PHP PDO implementation.
 
 ## Installing on a Ubuntu LAMP Server
 
