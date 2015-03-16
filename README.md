@@ -1,4 +1,5 @@
-# The Arms Locker - Limited Resource Management
+# The Arms Locker
+## Limited Resource Management
 
 The Arms Locker attempts to solve a simple problem: "Who has what?". Whether you are managing IP addresses on a static network or books you've loaned to friends, you can use The Arms Locker to track who has what.
 
