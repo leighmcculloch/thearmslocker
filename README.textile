@@ -16,14 +16,14 @@ h2. Installing on a Ubuntu LAMP Server
 
 # Install Ubuntu Server
 # Select during installation to set the server up as a LAMP server
-# sudo apt-get install git-core
-# sudo apt-get install php5-sqlite
-# cd /var/www
-# sudo git clone http://github.com/leighmcculloch/thearmslocker.git
-# Change your /etc/apache2/sites-available/default so that instead of
-  pointing to /var/www for the document root, it points to
-  /var/www/thearmslocker/web-app/.
-# sudo /etc/init.d/apache2 restart
+# `sudo apt-get install git-core`
+# `sudo apt-get install php5-sqlite`
+# `cd /var/www`
+# `sudo git clone http://github.com/leighmcculloch/thearmslocker.git`
+# Change your `/etc/apache2/sites-available/default` so that instead of
+  pointing to `/var/www` for the document root, it points to
+  `/var/www/thearmslocker/web-app/`.
+# `sudo /etc/init.d/apache2 restart`
 # You should be up and running :)
 
 
